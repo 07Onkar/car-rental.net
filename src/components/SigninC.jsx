@@ -1,5 +1,5 @@
 import React from "react";
-import Captcha from "./Captcha";
+import {Captcha} from "./Captcha";
 import { FaSignInAlt } from "react-icons/fa";
 const SigninC = () => {
   return (
