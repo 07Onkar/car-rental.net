@@ -2686,11 +2686,11 @@
   }
   
   .btn-pass{
-    position: absolute;
+    position: relative;
     /* top:100px */
     bottom:50px;
-    left:400px;
-    font-size: 17px;
+    left:80px;
+    /* font-size: 17px; */
   }
   .password-input {
     width: 100%;
@@ -2702,8 +2702,8 @@
   
   .password-input button {
     position: absolute;
-    top: 50%;
-    right: 5px;
+    top: 52%;
+    right: 760px;
     transform: translateY(-50%);
     background: none;
     border: none;
@@ -2800,6 +2800,11 @@
       bottom:50px;
       left:300px;
       font-size: 17px;
+    }
+    .password-input button{
+      position: absolute;
+      top:36%;
+      left: 340px;
     }
   }
   
