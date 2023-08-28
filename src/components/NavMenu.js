@@ -1,89 +1,96 @@
-import React, { useEffect, useState } from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../images/Navbar/Car Rental.png";
+import "./styles/globalStyles.css";
 import { FaBars, FaTimes } from "react-icons/fa";
+export class NavMenu extends Component {
+  constructor(props) {
+    super(props);
 
-function Navbar() {
-  const [nav, setNav] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
+    this.state = {
+      nav: false,
+      scrollPosition: 0,
+      isScrolled: false,
+    };
+  }
 
-  useEffect(() => {
+  componentDidMount() {
     const handleScroll = () => {
-      setScrollPosition(window.scrollY);
+      this.setState({ scrollPosition: window.scrollY });
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }
 
-  const navbarClass = scrollPosition > 0 ? "navbar navbar-blur" : "navbar";
-  const openNav = () => {
-    setNav(!nav);
+  openNav = () => {
+    this.setState((prevState) => ({
+      nav: !prevState.nav,
+    }));
   };
 
-  const [isScrolled, setIsScrolled] = useState(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY > 0;
-      setIsScrolled(scrolled);
-    };
+  handleScroll = () => {
+    const scrolled = window.scrollY > 0;
+    this.setState({
+      isScrolled: scrolled,
+    });
+  };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
 
-  return (
-    <>
-      <nav className={isScrolled ? "navbar scrolled" : "navbar"}>
-        {/* For Mobiles */}
+  render() {
+    const { nav, scrollPosition, isScrolled } = this.state;
+    const navbarClass = scrollPosition > 0 ? "navbar navbar-blur" : "navbar";
+
+    return (
+      <>
         <div className={`mobile-navbar ${nav ? "open-nav" : ""}`}>
-          <div onClick={openNav} className="mobile-navbar_close">
+          <div onClick={this.openNav} className="mobile-navbar_close">
             <FaTimes />
           </div>
           <ul className="mobile-navbar_links">
             <li>
-              <Link onClick={openNav} to="/">
+              <Link onClick={this.openNav} to="/">
                 Home
               </Link>
             </li>
             <li>
-              <Link onClick={openNav} to="/about">
+              <Link onClick={this.openNav} to="/about">
                 About
               </Link>
             </li>
             <li>
-              <Link onClick={openNav} to="/models">
+              <Link onClick={this.openNav} to="/models">
                 Models
               </Link>
             </li>
             <li>
-              <Link onClick={openNav} to="/testimonials">
+              <Link onClick={this.openNav} to="/testimonials">
                 Testimonials
               </Link>
             </li>
             <li>
-              <Link onClick={openNav} to="/team">
+              <Link onClick={this.openNav} to="/team">
                 Our Team
               </Link>
             </li>
             <li>
-              <Link onClick={openNav} to="/contact">
+              <Link onClick={this.openNav} to="/contact">
                 Contact
               </Link>
             </li>
             <li>
-              <Link onClick={openNav} to="/sign-in">
+              <Link onClick={this.openNav} to="/sign-in">
                 Sign in
               </Link>
             </li>
             <li>
-              <Link onClick={openNav} to="/register">
+              <Link onClick={this.openNav} to="/register">
                 Register
               </Link>
             </li>
@@ -140,14 +147,11 @@ function Navbar() {
           </div>
 
           {/* for Mobile */}
-          <div className="mobile-hamb" onClick={openNav}>
+          <div className="mobile-hamb" onClick={this.openNav}>
             <FaBars />
           </div>
         </div>
-      </nav>
-    </>
-  );
+      </>
+    );
+  }
 }
-
-export default Navbar;
-

@@ -1,16 +1,18 @@
 import React from 'react'
-import HeroPages from '../components/HeroPages'
-import Footer from '../components/Footer'
+import {HeroPages} from '../components/HeroPages'
+import {Footer} from '../components/Footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import ScrollTop from '../components/ScrollTop'
+import { NavMenu } from '../components/NavMenu'
 
 function Team() {
   return (
     <>
        <section className="team-page">
         <HeroPages name="Our Team" />
-        <div className="cotnainer">
+        <NavMenu/>
+        <div className="container">
           <div className="team-container">
           {/* Add the team data here  */}
             
