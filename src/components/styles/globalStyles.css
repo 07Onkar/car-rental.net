@@ -23,7 +23,14 @@
   
   /* For the Links in the Buttons */
   
-
+  .login-input-password{
+    margin-top: 10px;
+  }
+  .password-eye{
+    display: grid;
+    left:220px;
+    bottom:290px;
+  }
   h2{
     font-weight: 600;
   }
@@ -474,6 +481,7 @@
       padding: 4rem 2.5rem 5rem 2.5rem;
     }
   }
+  
   
   .book-content_box h2 {
     font-size: 2.4rem;
@@ -2700,7 +2708,7 @@
     padding-right: 5px;
   }
   
-  .password-input button {
+  .register-pass-eye  {
     position: absolute;
     top: 52%;
     right: 760px;
@@ -2710,7 +2718,7 @@
     cursor: pointer;
   }
   
-  .password-input button i {
+  .register-pass-eye button i {
     font-size: 18px;
   }
   
@@ -2779,12 +2787,15 @@
       font-size: 14px;
     }
   
-    .password-input input[type="password"] {
+    .register-pass-eye input[type="password"] {
       padding-right: 0px;
     }
   
-    .password-input button i {
+    .register-pass-eye button i {
       font-size: 16px;
+    }
+    .login-input-password{
+      margin-top: 10px;
     }
   
     .text-content h2 {
@@ -2801,7 +2812,7 @@
       left:300px;
       font-size: 17px;
     }
-    .password-input button{
+    .register-pass-eye button{
       position: absolute;
       top:36%;
       left: 340px;

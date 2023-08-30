@@ -6,6 +6,7 @@ import { HeroPages } from "../components/HeroPages";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { NavMenu } from "../components/NavMenu";
+import { SignInNew } from "../components/SignInNew";
 
 export class SignIn extends Component {
     render() {
@@ -15,7 +16,7 @@ export class SignIn extends Component {
                 <HeroPages name="Sign In" />
 
                 <div className="container">
-                    <SigninC />
+                    <SignInNew/>
                 </div>
 
                 <div className="book-banner">

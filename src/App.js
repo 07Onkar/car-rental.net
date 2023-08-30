@@ -9,6 +9,8 @@ import { SignIn } from "./pages/SignIn";
 import { Register } from "./pages/Register";
 import { Welcome } from "./components/Welcome";
 import Team from "./pages/Team";
+import Payment from "./components/Payment";
+import ErrorPage from "./components/ErrorPage";
 
 export default class App extends Component {
   static displayName = App.name;
@@ -28,6 +30,8 @@ export default class App extends Component {
                 <Route path="/sign-in" element={<SignIn />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/welcome" element={<Welcome/>} />
+                <Route path="/payment" element={<Payment/>} />
+                <Route path="/error" element={<ErrorPage/>} />
         </Routes>
         </>
     );

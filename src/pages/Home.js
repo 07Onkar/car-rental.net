@@ -11,6 +11,7 @@ import { Download } from "../components/Download";
 import { Footer } from "../components/Footer";
 import ChooseUs from "../components/ChooseUs";
 import { NavMenu } from "../components/NavMenu";
+
 export class Home extends Component {
   static displayName = Home.name;
 
@@ -23,6 +24,7 @@ export class Home extends Component {
         <PlanTrip />
         <PickCar />
         <Banner />
+        
         <ChooseUs/>
         <Testimonials />
         <Faq />
